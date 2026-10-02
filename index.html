@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Walk Baby Love BBQ · Arkadelphia, AR — Low & Slow Smoked BBQ</title>
+<meta name="description" content="Walk Baby Love BBQ — Arkadelphia's 5-star smoked barbecue food truck. Smoked ribs, loaded brisket fries, honey garlic wings, and the Ultimate WBL burger. Come find the truck." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --char:#0e0b0a; --char2:#171210; --ember:#ff5e1a; --ember2:#e23a12;
+    --gold:#f0b04a; --cream:#f7efe3; --smoke:#b8aca0; --line:rgba(247,239,227,.12);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--char);color:var(--cream);font-family:'Inter',system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+  h1,h2,h3,.display{font-family:'Anton',sans-serif;font-weight:400;letter-spacing:.5px;line-height:.98;text-transform:uppercase}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .ember{color:var(--ember)}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;font-size:1rem;padding:15px 28px;border-radius:50px;transition:.2s transform,.2s box-shadow;cursor:pointer;border:none}
+  .btn-primary{background:linear-gradient(135deg,var(--ember),var(--ember2));color:#fff;box-shadow:0 10px 30px rgba(226,58,18,.4)}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(226,58,18,.55)}
+  .btn-ghost{background:rgba(247,239,227,.06);color:var(--cream);border:1.5px solid var(--line);backdrop-filter:blur(6px)}
+  .btn-ghost:hover{background:rgba(247,239,227,.12);transform:translateY(-3px)}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+      padding:16px 24px;transition:.3s background,.3s padding;backdrop-filter:blur(0)}
+  nav.scrolled{background:rgba(14,11,10,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:10px 24px}
+  .brand{font-family:'Anton';font-size:1.35rem;letter-spacing:1px}
+  .brand small{display:block;font-family:'Caveat';font-size:.85rem;color:var(--gold);letter-spacing:0;text-transform:none;margin-top:-4px}
+  .nav-links{display:flex;gap:28px;align-items:center;font-weight:600;font-size:.95rem}
+  .nav-links a{color:var(--smoke);transition:.2s}.nav-links a:hover{color:var(--cream)}
+  .nav-call{background:var(--ember);color:#fff!important;padding:9px 18px;border-radius:50px;font-weight:700}
+  @media(max-width:760px){.nav-links a:not(.nav-call){display:none}}
+
+  /* HERO */
+  .hero{position:relative;height:100vh;min-height:620px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+  .hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .hero::after{content:"";position:absolute;inset:0;z-index:1;
+    background:radial-gradient(ellipse at center,rgba(14,11,10,.35),rgba(14,11,10,.82) 70%,var(--char) 100%)}
+  .hero-inner{position:relative;z-index:2;padding:0 20px;animation:rise 1s ease both}
+  @keyframes rise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+  .stars{color:var(--gold);font-weight:700;letter-spacing:2px;font-size:1.05rem;margin-bottom:14px}
+  .stars span{color:var(--smoke);font-weight:500;letter-spacing:0;font-size:.9rem}
+  .hero h1{font-size:clamp(3rem,10vw,7rem);text-shadow:0 6px 40px rgba(0,0,0,.6)}
+  .hero h1 .lo{color:var(--ember)}
+  .tag{font-family:'Caveat';font-size:clamp(1.4rem,4vw,2.2rem);color:var(--gold);margin:6px 0 26px;text-transform:none}
+  .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .scroll-cue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;color:var(--smoke);font-size:.8rem;letter-spacing:2px;text-transform:uppercase;animation:bob 2s infinite}
+  @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+  /* STRIP */
+  .strip{background:linear-gradient(90deg,var(--ember2),var(--ember));color:#fff;font-weight:700;text-align:center;padding:12px;font-size:.98rem;letter-spacing:.3px}
+
+  /* SECTION */
+  section{padding:92px 0}
+  .eyebrow{font-family:'Caveat';color:var(--gold);font-size:1.5rem;margin-bottom:2px}
+  .sec-title{font-size:clamp(2.2rem,6vw,3.6rem);margin-bottom:8px}
+  .lead{color:var(--smoke);max-width:640px;font-size:1.08rem}
+  .center{text-align:center;margin:0 auto}
+
+  /* MEATS GRID */
+  .meats{background:var(--char2)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px;margin-top:44px}
+  .card{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 20px 50px rgba(0,0,0,.5);
+        border:1px solid var(--line);transition:.35s transform,.35s box-shadow}
+  .card:hover{transform:translateY(-8px);box-shadow:0 30px 70px rgba(226,58,18,.28)}
+  .card video{width:100%;height:100%;object-fit:cover;display:block}
+  .card .label{position:absolute;inset:auto 0 0 0;z-index:2;padding:26px 20px 20px;
+    background:linear-gradient(transparent,rgba(14,11,10,.92))}
+  .card .label h3{font-size:1.55rem}
+  .card .label p{color:var(--smoke);font-size:.9rem;margin-top:2px}
+  .card .pill{position:absolute;top:14px;left:14px;z-index:2;background:rgba(255,94,26,.92);color:#fff;
+    font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 12px;border-radius:50px}
+
+  /* MENU */
+  .menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 48px;margin-top:40px}
+  @media(max-width:760px){.menu-grid{grid-template-columns:1fr}}
+  .m-cat{font-family:'Anton';color:var(--ember);font-size:1.15rem;letter-spacing:1px;margin:26px 0 6px;
+    border-bottom:1px solid var(--line);padding-bottom:8px}
+  .m-item{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px dashed rgba(247,239,227,.07)}
+  .m-item .n{font-weight:600}.m-item .d{color:var(--smoke);font-size:.88rem;font-weight:400}
+  .m-item .price{color:var(--gold);font-weight:700;white-space:nowrap}
+  .menu-note{margin-top:18px;color:var(--smoke);font-size:.85rem;font-style:italic}
+
+  /* STORY (video bg band) */
+  .band{position:relative;overflow:hidden}
+  .band video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .band::after{content:"";position:absolute;inset:0;z-index:1;background:rgba(14,11,10,.8)}
+  .band .wrap{position:relative;z-index:2}
+  .story{max-width:720px}.story p{font-size:1.12rem;color:#e9ded0;margin-top:16px}
+
+  /* FIND */
+  .find-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:44px;align-items:center}
+  @media(max-width:760px){.find-grid{grid-template-columns:1fr}}
+  .info-row{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .info-row .ic{font-size:1.4rem}
+  .info-row h4{font-family:'Inter';font-weight:800;text-transform:none;letter-spacing:0;font-size:1.05rem}
+  .info-row p{color:var(--smoke);font-size:.95rem}
+  .hours li{list-style:none;display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px dashed rgba(247,239,227,.08);color:var(--smoke)}
+  .hours li b{color:var(--cream);font-weight:600}
+  .map{border-radius:18px;overflow:hidden;border:1px solid var(--line);min-height:300px;filter:grayscale(.3) contrast(1.1)}
+  .map iframe{width:100%;height:100%;min-height:300px;border:0;display:block}
+
+  /* CTA */
+  .cta{background:linear-gradient(135deg,var(--ember2),var(--ember));text-align:center}
+  .cta h2{font-size:clamp(2.4rem,7vw,4rem);color:#fff}
+  .cta p{color:rgba(255,255,255,.9);font-size:1.15rem;margin:10px 0 28px}
+  .cta .btn-primary{background:#0e0b0a;box-shadow:0 12px 34px rgba(0,0,0,.4)}
+  .cta .btn-ghost{border-color:rgba(255,255,255,.5);color:#fff}
+
+  footer{background:var(--char);padding:48px 0 28px;text-align:center;border-top:1px solid var(--line)}
+  .socials{display:flex;gap:18px;justify-content:center;margin:18px 0}
+  .socials a{width:44px;height:44px;border-radius:50%;background:rgba(247,239,227,.06);display:grid;place-items:center;
+    border:1px solid var(--line);transition:.2s}.socials a:hover{background:var(--ember);transform:translateY(-3px)}
+  .foot-note{color:var(--smoke);font-size:.85rem;margin-top:14px}
+
+  .preview-ribbon{position:fixed;bottom:0;left:0;right:0;z-index:60;background:rgba(14,11,10,.92);
+    backdrop-filter:blur(10px);border-top:2px solid var(--ember);padding:11px 20px;text-align:center;font-size:.86rem;color:var(--smoke)}
+  .preview-ribbon b{color:var(--cream)}.preview-ribbon a{color:var(--ember);font-weight:700}
+  @media(max-width:760px){.preview-ribbon{font-size:.76rem;padding:9px 12px}}
+  .reveal{opacity:0;transform:translateY(28px);transition:.7s ease}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="brand">WALK BABY LOVE<small>real-deal smoked bbq</small></div>
+  <div class="nav-links">
+    <a href="#meats">The Meats</a>
+    <a href="#menu">Menu</a>
+    <a href="#story">Our Story</a>
+    <a href="#find">Find the Truck</a>
+    <a class="nav-call" href="tel:+18702100979">📞 Order</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <video autoplay muted loop playsinline poster="media/hero-poster.jpg">
+    <source src="media/hero-steak.mp4" type="video/mp4" />
+  </video>
+  <div class="hero-inner">
+    <div class="stars">★★★★★ &nbsp;5.0 &nbsp;<span>· 43 reviews · Arkadelphia, AR</span></div>
+    <h1>WALK BABY <span class="lo">LOVE</span> BBQ</h1>
+    <div class="tag">low &amp; slow, smoked with love</div>
+    <div class="hero-btns">
+      <a class="btn btn-primary" href="tel:+18702100979">📞 Call to Order</a>
+      <a class="btn btn-ghost" href="#find">📍 Find the Truck</a>
+    </div>
+  </div>
+  <div class="scroll-cue">scroll · the good stuff ↓</div>
+</header>
+
+<div class="strip">🔥 Hand-rubbed &amp; hickory-smoked daily · Ribs · Brisket · Wings · Burgers — come hungry</div>
+
+<!-- MEATS -->
+<section class="meats" id="meats">
+  <div class="wrap">
+    <div class="center reveal">
+      <div class="eyebrow">what's on the smoker</div>
+      <h2 class="sec-title">The Meats 🍖</h2>
+      <p class="lead center">Every cut is rubbed by hand and smoked low and slow until it pulls apart just right. This is the stuff people drive to Arkadelphia for.</p>
+    </div>
+    <div class="grid">
+      <div class="card reveal">
+        <span class="pill">Smoked Ribs</span>
+        <video autoplay muted loop playsinline><source src="media/ribs.mp4" type="video/mp4" /></video>
+        <div class="label"><h3>Fall-Off-The-Bone Ribs</h3><p>tender, tangy, glazed in our house sauce</p></div>
+      </div>
+      <div class="card reveal">
+        <span class="pill">Brisket</span>
+        <video autoplay muted loop playsinline><source src="media/brisket.mp4" type="video/mp4" /></video>
+        <div class="label"><h3>Loaded Brisket</h3><p>smoked hours deep — piled on fries or a bun</p></div>
+      </div>
+      <div class="card reveal">
+        <span class="pill">Pulled Pork</span>
+        <video autoplay muted loop playsinline><source src="media/pork.mp4" type="video/mp4" /></video>
+        <div class="label"><h3>Saucy Pulled Pork</h3><p>slathered, smoky, and stacked high</p></div>
+      </div>
+      <div class="card reveal">
+        <span class="pill">Wings</span>
+        <video autoplay muted loop playsinline><source src="media/chicken.mp4" type="video/mp4" /></video>
+        <div class="label"><h3>Honey Garlic &amp; Habanero Wings</h3><p>smoked then sauced — sweet heat or straight fire</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="wrap">
+    <div class="center reveal">
+      <div class="eyebrow">dig in</div>
+      <h2 class="sec-title">The Menu</h2>
+      <p class="lead center">A taste of what comes off the truck. Ask about today's specials.</p>
+    </div>
+    <div class="menu-grid reveal">
+      <div>
+        <div class="m-cat">🔥 Off The Smoker</div>
+        <div class="m-item"><div><div class="n">Smoked Ribs</div><div class="d">half or full rack, house tangy sauce</div></div><div class="price">$14+</div></div>
+        <div class="m-item"><div><div class="n">Loaded Brisket Fries</div><div class="d">waffle fries piled with chopped brisket</div></div><div class="price">$12</div></div>
+        <div class="m-item"><div><div class="n">Pulled Pork Plate</div><div class="d">with two homemade sides</div></div><div class="price">$13</div></div>
+
+        <div class="m-cat">🍗 Wings</div>
+        <div class="m-item"><div><div class="n">Hot Honey Garlic Wings</div><div class="d">smoked, sweet &amp; sticky</div></div><div class="price">$11</div></div>
+        <div class="m-item"><div><div class="n">Mango Habanero Wings</div><div class="d">served with okra &amp; waffle fries</div></div><div class="price">$12</div></div>
+      </div>
+      <div>
+        <div class="m-cat">🍔 Handhelds</div>
+        <div class="m-item"><div><div class="n">The Ultimate WBL Burger</div><div class="d">the one everybody talks about</div></div><div class="price">$12</div></div>
+        <div class="m-item"><div><div class="n">Chopped Brisket Sandwich</div><div class="d">on a toasted bun, pickles &amp; sauce</div></div><div class="price">$11</div></div>
+
+        <div class="m-cat">🥘 Homemade Sides</div>
+        <div class="m-item"><div><div class="n">Chicken &amp; Dressing</div><div class="d">just like Sunday dinner</div></div><div class="price">$5</div></div>
+        <div class="m-item"><div><div class="n">Smoked Green Beans</div><div class="d">slow-cooked with smoked meat</div></div><div class="price">$4</div></div>
+        <div class="m-item"><div><div class="n">Waffle Fries &amp; Fried Okra</div><div class="d">crispy, golden, addictive</div></div><div class="price">$4</div></div>
+      </div>
+    </div>
+    <p class="menu-note">* Sample menu &amp; prices shown for this preview — we'll load your real, up-to-date menu.</p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="band" id="story">
+  <video autoplay muted loop playsinline><source src="media/spices.mp4" type="video/mp4" /></video>
+  <div class="wrap">
+    <div class="story reveal">
+      <div class="eyebrow">who we are</div>
+      <h2 class="sec-title">Smoked With Love, Served With Soul</h2>
+      <p>Walk Baby Love BBQ started with a simple idea: real barbecue, done the slow way, made for the people we feed. No shortcuts, no microwave — just wood smoke, a good rub, and time.</p>
+      <p>We roll the truck around Arkadelphia bringing ribs, brisket, wings, and homemade sides that taste like they came off a back-porch pit. Come find us, grab a plate, and you'll understand why folks keep coming back.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FIND -->
+<section id="find">
+  <div class="wrap">
+    <div class="center reveal">
+      <div class="eyebrow">come get some</div>
+      <h2 class="sec-title">Find the Truck</h2>
+    </div>
+    <div class="find-grid">
+      <div class="reveal">
+        <div class="info-row"><div class="ic">📍</div><div><h4>Where We Post Up</h4><p>1414 N 10th St, Arkadelphia, AR 71923<br/><span style="color:var(--gold)">Follow our Facebook for daily truck locations</span></p></div></div>
+        <div class="info-row"><div class="ic">📞</div><div><h4>Call to Order</h4><p><a href="tel:+18702100979" style="color:var(--ember);font-weight:700">(870) 210-0979</a> — call ahead, skip the wait</p></div></div>
+        <div class="info-row"><div class="ic">🕒</div><div><h4>Hours</h4>
+          <ul class="hours" style="margin-top:6px">
+            <li><b>Tue – Thu</b><span>11am – 7pm</span></li>
+            <li><b>Fri – Sat</b><span>11am – 9pm</span></li>
+            <li><b>Sun – Mon</b><span>Catering only</span></li>
+          </ul>
+          <p style="margin-top:8px;font-style:italic">* Sample hours for this preview — we'll set your real ones.</p>
+        </div></div>
+        <div style="margin-top:24px"><a class="btn btn-primary" href="tel:+18702100979">📞 Order Now</a></div>
+      </div>
+      <div class="map reveal">
+        <iframe title="Walk Baby Love BBQ location" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=1414+N+10th+St,+Arkadelphia,+AR+71923&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap reveal">
+    <h2>Hungry Yet?</h2>
+    <p>Ribs are on the smoker. Come get a plate.</p>
+    <div class="hero-btns">
+      <a class="btn btn-primary" href="tel:+18702100979">📞 (870) 210-0979</a>
+      <a class="btn btn-ghost" href="https://www.facebook.com/walkbabylovebbq/" target="_blank" rel="noopener">Follow on Facebook</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand" style="font-size:1.6rem">WALK BABY LOVE BBQ<small>Arkadelphia, Arkansas</small></div>
+    <div class="socials">
+      <a href="https://www.facebook.com/walkbabylovebbq/" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+      <a href="https://www.instagram.com/walkbabylovebbqllc/" target="_blank" rel="noopener" aria-label="Instagram">◎</a>
+      <a href="tel:+18702100979" aria-label="Call">✆</a>
+    </div>
+    <p class="foot-note">© 2026 Walk Baby Love BBQ LLC · 1414 N 10th St, Arkadelphia, AR 71923 · (870) 210-0979</p>
+  </div>
+</footer>
+
+<div class="preview-ribbon">
+  ✨ <b>Free homepage preview</b> built for Walk Baby Love BBQ by <b>MixedMakerShop</b> — like it? Sites from $400. &nbsp;<a href="tel:+15015758017">Text Topher · (501) 575-8017</a>
+</div>
+
+<script>
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+  const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
